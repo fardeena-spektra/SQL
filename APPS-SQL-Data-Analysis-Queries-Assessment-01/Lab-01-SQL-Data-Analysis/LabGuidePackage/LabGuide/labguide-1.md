@@ -30,4 +30,4 @@ Use `GROUP BY` over a month expression derived from `SaleDate` (for example `FOR
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
 > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
-<validation step="5c000001-0001-4a01-8b01-000000000001" />
+<validation step="1057d158-eec2-4943-a1bf-edd8b59872c9" />

@@ -27,4 +27,4 @@ Use a **ranking window function** — `ROW_NUMBER() OVER (PARTITION BY CustomerI
 > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
 > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
-<validation step="5c000002-0002-4a02-8b02-000000000002" />
+<validation step="e743fde9-f4a2-45b5-943b-7e8be60b1eda" />
