@@ -1,0 +1,141 @@
+{
+  "packageId": "lab-01-sql-data-analysis",
+  "slug": "lab-01-sql-data-analysis",
+  "title": "SQL — Data Analysis Queries (Lab 01)",
+  "version": 1,
+  "exportedAt": "2026-06-22T00:00:00.000Z",
+  "exportTarget": "zip",
+  "deliverableConfig": {
+    "arm": {
+      "enabled": true,
+      "stages": 1
+    },
+    "cse": {
+      "enabled": true
+    },
+    "labGuide": {
+      "enabled": true,
+      "exercises": 3
+    },
+    "questions": {
+      "enabled": false
+    },
+    "validations": {
+      "enabled": true
+    },
+    "solution": {
+      "enabled": true
+    },
+    "rbac": {
+      "enabled": false
+    },
+    "policy": {
+      "enabled": false
+    },
+    "readme": {
+      "enabled": false
+    },
+    "specSheet": {
+      "enabled": true
+    }
+  },
+  "artifacts": [
+    {
+      "path": "DeploymentPackage/deploy-01.json",
+      "kind": "deployment_arm",
+      "lintStatus": "passed",
+      "facilitatorOnly": false
+    },
+    {
+      "path": "DeploymentPackage/deploy-01.parameters.json",
+      "kind": "deployment_params",
+      "lintStatus": "passed",
+      "facilitatorOnly": false
+    },
+    {
+      "path": "DeploymentPackage/bootstrap-01.sh",
+      "kind": "cse_script",
+      "lintStatus": "passed",
+      "facilitatorOnly": false
+    },
+    {
+      "path": "LabGuidePackage/LabGuide/GettingStarted.md",
+      "kind": "getting_started",
+      "lintStatus": "passed",
+      "facilitatorOnly": false
+    },
+    {
+      "path": "LabGuidePackage/LabGuide/labguide-1.md",
+      "kind": "exercise_md",
+      "lintStatus": "passed",
+      "facilitatorOnly": false
+    },
+    {
+      "path": "LabGuidePackage/LabGuide/labguide-2.md",
+      "kind": "exercise_md",
+      "lintStatus": "passed",
+      "facilitatorOnly": false
+    },
+    {
+      "path": "LabGuidePackage/LabGuide/labguide-3.md",
+      "kind": "exercise_md",
+      "lintStatus": "passed",
+      "facilitatorOnly": false
+    },
+    {
+      "path": "LabGuidePackage/LabGuide/media/.gitkeep",
+      "kind": "media",
+      "lintStatus": "passed",
+      "facilitatorOnly": false
+    },
+    {
+      "path": "LabGuidePackage/Solution-Guide/solution-guide.md",
+      "kind": "solution_md",
+      "lintStatus": "passed",
+      "facilitatorOnly": true
+    },
+    {
+      "path": "LabGuidePackage/masterdoc.json",
+      "kind": "masterdoc",
+      "lintStatus": "passed",
+      "facilitatorOnly": false
+    },
+    {
+      "path": "spec.md",
+      "kind": "spec_md",
+      "lintStatus": "passed",
+      "facilitatorOnly": false
+    },
+    {
+      "path": "Validations/Validation.md",
+      "kind": "validation_md",
+      "lintStatus": "passed",
+      "facilitatorOnly": false
+    },
+    {
+      "path": "Validations/validate-task1-sales-trend.ps1",
+      "kind": "validation_script",
+      "lintStatus": "passed",
+      "facilitatorOnly": false
+    },
+    {
+      "path": "Validations/validate-task2-dedupe-customers.ps1",
+      "kind": "validation_script",
+      "lintStatus": "passed",
+      "facilitatorOnly": false
+    },
+    {
+      "path": "Validations/validate-task3-conditional-agg.ps1",
+      "kind": "validation_script",
+      "lintStatus": "passed",
+      "facilitatorOnly": false
+    },
+    {
+      "path": "assessment-brief.md",
+      "kind": "brief_md",
+      "lintStatus": "passed",
+      "facilitatorOnly": true
+    }
+  ],
+  "errors": []
+}

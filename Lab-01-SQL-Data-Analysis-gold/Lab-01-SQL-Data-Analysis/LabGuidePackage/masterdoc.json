@@ -1,0 +1,25 @@
+[
+  {
+    "Name": "SQL — Data Analysis Queries (Lab 01)",
+    "Language": "English",
+    "BaseURL": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabsAI-Azure/Microland/refs/heads/main/Lab-01-SQL-Data-Analysis/LabGuidePackage/LabGuide/",
+    "Files": [
+      {
+        "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabsAI-Azure/Microland/refs/heads/main/Lab-01-SQL-Data-Analysis/LabGuidePackage/LabGuide/GettingStarted.md",
+        "Order": 1
+      },
+      {
+        "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabsAI-Azure/Microland/refs/heads/main/Lab-01-SQL-Data-Analysis/LabGuidePackage/LabGuide/labguide-1.md",
+        "Order": 2
+      },
+      {
+        "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabsAI-Azure/Microland/refs/heads/main/Lab-01-SQL-Data-Analysis/LabGuidePackage/LabGuide/labguide-2.md",
+        "Order": 3
+      },
+      {
+        "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabsAI-Azure/Microland/refs/heads/main/Lab-01-SQL-Data-Analysis/LabGuidePackage/LabGuide/labguide-3.md",
+        "Order": 4
+      }
+    ]
+  }
+]
