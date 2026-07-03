@@ -50,7 +50,7 @@ Use the **Split Window** button at the top-right to open the guide beside your t
 
 ### **Environment Details**
 
-- **One Ubuntu 22.04 SQL Server 2022 on Linux node** (`Standard_D2s_v3`): labvm-<inject key="DeploymentID"/>, private IP `10.0.0.4`.
+- **One Ubuntu 22.04 SQL Server 2022 on Linux node** (`Standard_D2s_v3`): `labvm-<DeploymentID>`, private IP `10.0.0.4`.
 - The **`SalesDB`** database contains **`dbo.Sales`** (2,100 rows dated Jan–Jun 2026 with an `Amount`, `Region`, `Category`, and `Status`) and **`dbo.CustomerStaging`** (1,500 rows that deliberately repeat the same `CustomerId` with different `LoadDate` values).
 - No object you need to create yet exists — each exercise asks you to publish a specific **view**.
 
