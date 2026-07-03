@@ -1,8 +1,6 @@
-# Exercise 2: Remove Duplicates with Ranking
+# Scenario 2: Remove Duplicates with Ranking
 
-### Estimated Duration: 30 Minutes
-
-## Lab Overview
+## **Lab Overview**
 
 A nightly load appended customer records to **`dbo.CustomerStaging`** in `SalesDB` without de-duplicating, so the **same `CustomerId` now appears several times**, each copy carrying a different `LoadDate` (and sometimes a different `Tier`). Downstream reports double-count these customers. You must produce a clean list that keeps **only the most recent row per customer**, using a **ranking function**, and publish it as a view.
 
@@ -10,7 +8,7 @@ This is an **assessment**: the task gives you the **required outcome** and the *
 
 > **Note:** Connect to the SQL node over SSH and use `sqlcmd` with the **SA** login. The staging table columns are `StagingId, CustomerId, CustomerName, Region, Tier, LoadDate`.
 
-## Task 1: Build the de-duplicated customer view
+## **Task 1: Build the de-duplicated customer view**
 
 **Goal:** Collapse the duplicate rows in `dbo.CustomerStaging` so that **each `CustomerId` appears exactly once**, keeping the **latest load** (the row with the most recent `LoadDate`) for that customer.
 
@@ -28,3 +26,9 @@ Use a **ranking window function** — `ROW_NUMBER() OVER (PARTITION BY CustomerI
 > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
 <validation step="e743fde9-f4a2-45b5-943b-7e8be60b1eda" />
+
+Click **Next** to begin Exercise 1.
+
+![alt text](./images/4.2.png)
+
+## **Happy Assessing !!**

@@ -1,8 +1,6 @@
-# Exercise 3: Complex Query with Conditional Aggregation
+# **Scenario 3: Complex Query with Conditional Aggregation**
 
-### Estimated Duration: 30 Minutes
-
-## Lab Overview
+## **Lab Overview**
 
 Leadership wants a single-glance breakdown of total revenue split by order **status** — how much is `OPEN`, how much has `SHIPPED`, and how much is `CLOSED` — laid out as **columns** rather than rows, so it can drop straight into a dashboard. This is a classic **conditional aggregation** (pivot-style) problem: one pass over `dbo.Sales` with `SUM(CASE WHEN …)` per status. You must publish the result as a view.
 
@@ -10,7 +8,7 @@ This is an **assessment**: the task gives you the **required outcome** and the *
 
 > **Note:** Connect to the SQL node over SSH and use `sqlcmd` with the **SA** login. The `dbo.Sales` table carries a `Status` column whose values are `OPEN`, `SHIPPED`, and `CLOSED`.
 
-## Task 1: Build the sales-by-status conditional-aggregation view
+## **Task 1: Build the sales-by-status conditional-aggregation view**
 
 **Goal:** Produce a **single-row** pivot of total revenue by status, with one column per status, using conditional aggregation over the whole `dbo.Sales` table.
 
