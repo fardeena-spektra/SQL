@@ -80,14 +80,28 @@ apt-get install -y curl gnupg apt-transport-https software-properties-common >/d
 # Install SQL Server 2022 for Ubuntu (mssql-server) - guarded, never hard-fail
 # -----------------------------------------------------------------------------
 install_sql_server() {
-    log "[SQL] Adding Microsoft package signing key and SQL Server 2022 repo (Ubuntu 22.04)"
-    curl -fsSL https://packages.microsoft.com/keys/microsoft.asc 2>/dev/null \
-        | gpg --dearmor -o /usr/share/keyrings/microsoft-prod.gpg 2>/dev/null \
-        || { log "[SQL] WARNING: could not fetch signing key (needs internet) - skipping SQL install"; return 0; }
+    # log "[SQL] Adding Microsoft package signing key and SQL Server 2022 repo (Ubuntu 22.04)"
+    # curl -fsSL https://packages.microsoft.com/keys/microsoft.asc 2>/dev/null \
+    #     | gpg --dearmor -o /usr/share/keyrings/microsoft-prod.gpg 2>/dev/null \
+    #     || { log "[SQL] WARNING: could not fetch signing key (needs internet) - skipping SQL install"; return 0; }
 
-    curl -fsSL https://packages.microsoft.com/config/ubuntu/22.04/mssql-server-2022.list 2>/dev/null \
-        -o /etc/apt/sources.list.d/mssql-server-2022.list \
-        || { log "[SQL] WARNING: could not fetch mssql-server repo list - skipping SQL install"; return 0; }
+    # curl -fsSL https://packages.microsoft.com/config/ubuntu/22.04/mssql-server-2022.list 2>/dev/null \
+    #     -o /etc/apt/sources.list.d/mssql-server-2022.list \
+    #     || { log "[SQL] WARNING: could not fetch mssql-server repo list - skipping SQL install"; return 0; }
+log "[SQL] Adding Microsoft package signing key"
+
+curl -fsSL https://packages.microsoft.com/keys/microsoft.asc \
+| gpg --dearmor \
+| tee /usr/share/keyrings/microsoft-prod.gpg >/dev/null \
+|| {
+    log "[SQL] WARNING: could not fetch Microsoft signing key"
+    return 0
+}
+
+cat >/etc/apt/sources.list.d/mssql-server-2022.list <<EOF
+deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft-prod.gpg] https://packages.microsoft.com/ubuntu/22.04/mssql-server-2022 jammy main
+EOF
+
 
     apt-get update -y >/dev/null 2>&1 || log "[SQL] apt-get update (mssql repo) failed (continuing)"
     apt-get install -y mssql-server >/dev/null 2>&1 \
@@ -107,10 +121,12 @@ install_sql_server() {
 }
 
 install_sql_tools() {
-    log "[SQL] Installing mssql-tools (sqlcmd) + unixodbc-dev"
-    curl -fsSL https://packages.microsoft.com/config/ubuntu/22.04/prod.list 2>/dev/null \
-        -o /etc/apt/sources.list.d/msprod.list \
-        || { log "[SQL] WARNING: could not fetch prod repo list for tools - skipping tools install"; return 0; }
+log "[SQL] Installing mssql-tools (sqlcmd) + unixodbc-dev"
+cat >/etc/apt/sources.list.d/msprod.list <<EOF
+deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft-prod.gpg] https://packages.microsoft.com/ubuntu/22.04/prod jammy main
+EOF
+
+
     apt-get update -y >/dev/null 2>&1 || true
     ACCEPT_EULA=Y apt-get install -y mssql-tools18 unixodbc-dev >/dev/null 2>&1 \
         || ACCEPT_EULA=Y apt-get install -y mssql-tools unixodbc-dev >/dev/null 2>&1 \
@@ -128,6 +144,28 @@ if [ -x "${SQLCMD_CLASSIC}" ]; then
 elif [ -x "${SQLCMD_18}" ]; then
     SQLCMD="${SQLCMD_18}"
     SQLCMD_ARGS="-C"   # trust self-signed server cert
+fi
+
+if [ -n "${SQLCMD}" ]; then
+
+    log "[SQL] Waiting for SQL Server to accept connections..."
+
+    for i in {1..30}; do
+
+        if "${SQLCMD}" ${SQLCMD_ARGS} \
+            -S localhost \
+            -U SA \
+            -P "${SA_PASSWORD}" \
+            -Q "SELECT 1" >/dev/null 2>&1
+        then
+            log "[SQL] SQL Server is ready."
+            break
+        fi
+
+        sleep 5
+
+    done
+
 fi
 
 # Helper: run a T-SQL batch on the local instance (best-effort, retries while

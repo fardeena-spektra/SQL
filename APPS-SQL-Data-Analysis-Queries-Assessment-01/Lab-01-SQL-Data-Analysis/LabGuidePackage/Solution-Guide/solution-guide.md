@@ -1,6 +1,6 @@
 # CloudLabs by Spektra Systems | Facilitator Solution Guide (NOT for candidates)
 
-## SQL — Data Analysis Queries (Lab 01): Answer Key + Walkthrough
+## APPS-SQL-Data-Analysis-Queries-Assessment-01: Answer Key + Walkthrough
 
 This document mirrors the candidate exercise order. Each task lists the objective, the seeded ground truth, the reference T-SQL (run via `sqlcmd` on the single SQL node), the expected result, and the validation expectation. All work is performed over SSH on one Ubuntu node running SQL Server 2022 for Linux. The **SA** password is `NedSQL@1234!`; `sqlcmd` is at `/opt/mssql-tools/bin/sqlcmd` (or `/opt/mssql-tools18/bin/sqlcmd -C`).
 
