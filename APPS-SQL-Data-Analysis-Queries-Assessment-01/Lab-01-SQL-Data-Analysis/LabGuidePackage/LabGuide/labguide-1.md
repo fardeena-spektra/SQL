@@ -30,7 +30,7 @@ Use `GROUP BY` over a month expression derived from `SaleDate` (for example `FOR
 
 <validation step="1057d158-eec2-4943-a1bf-edd8b59872c9" />
 
-Click **Next** to begin Exercise 1.
+Click **Next** to begin Scenario 2.
 
 ![alt text](./images/4.1.png)
 

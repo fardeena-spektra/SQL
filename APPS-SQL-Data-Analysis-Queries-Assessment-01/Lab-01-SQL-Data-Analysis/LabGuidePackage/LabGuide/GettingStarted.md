@@ -1,6 +1,6 @@
 # **APPS-SQL-Data-Analysis-Queries-Assessment-01**
 
-Welcome to your SQL data-analysis hands-on skills assessment. This environment gives you **one live SQL Server 2022 on Linux** node (Ubuntu 22.04) preloaded with an analytics database. Read this page, then move to **Exercise 1** to begin.
+Welcome to your SQL data-analysis hands-on skills assessment. This environment gives you **one live SQL Server 2022 on Linux** node (Ubuntu 22.04) preloaded with an analytics database. Read this page, then move to **Scenario 1** to begin.
 
 ### Overall Estimated timing: **90 Minutes**
 
@@ -79,7 +79,7 @@ The CloudLabs support team is available 24/7 via email and live chat.
 - Email Support: labs-support@spektrasystems.com
 - Live Chat Support: https://cloudlabs.ai/labs-support
 
-Click **Next** to begin Exercise 1.
+Click **Next** to begin Scenario 1.
 
 ![alt text](./images/04.png)
 

@@ -1,4 +1,4 @@
-# Scenario 2: Remove Duplicates with Ranking
+# **Scenario 2: Remove Duplicates with Ranking**
 
 ## **Lab Overview**
 
@@ -27,7 +27,7 @@ Use a **ranking window function** — `ROW_NUMBER() OVER (PARTITION BY CustomerI
 
 <validation step="e743fde9-f4a2-45b5-943b-7e8be60b1eda" />
 
-Click **Next** to begin Exercise 1.
+Click **Next** to begin Scenario 3.
 
 ![alt text](./images/4.2.png)
 
